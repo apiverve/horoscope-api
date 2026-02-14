@@ -15,7 +15,9 @@ const api = new horoscopeAPI({
 
 // Example query
 var query = {
-  sign: "aries"
+  sign: "aries",
+  yesterday: false,
+  tomorrow: false
 };
 
 // Make the API request using callback
