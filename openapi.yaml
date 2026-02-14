@@ -1,32 +1,46 @@
 openapi: 3.0.4
 info:
   title: Horoscope
-  description: Horoscope is a simple tool for getting horoscope data. It returns the horoscope for the day.
+  description: >-
+    Horoscope is a simple tool for getting horoscope data. It returns the
+    horoscope for the day.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/horoscope:
     get:
       summary: Get Horoscope
-      description: Horoscope is a simple tool for getting horoscope data. It returns the horoscope for the day.
+      description: Get the horoscope of the day for a specific zodiac sign
       operationId: horoscope
       parameters:
-      - name: sign
-        in: query
-        schema:
-          type: string
-        required: true
-        description: The zodiac sign for which you want to get the horoscope (e.g., aries)
-        example: aries
+        - name: sign
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The zodiac sign for which you want to get the horoscope
+          example: aries
+        - name: yesterday
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: Set to true to get yesterday's horoscope
+        - name: tomorrow
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: Set to true to get tomorrow's horoscope
       responses:
         '200':
           description: Successful Response
@@ -42,20 +56,35 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
-                  color: purple
+                  color: green
                   compatibility:
-                  - leo
-                  - sagittarius
-                  horoscope: Today, you may feel a strong urge to expand your horizons and explore new opportunities. It's a great time to step out of your comfort zone and try something you've never done before. Trust your intuition and follow your instincts. Remember to stay grounded and maintain a sense of balance in all aspects of your life.
-                  luckyNumber: 1
-                  luckyTime: 1:00 PM
-                  mood: bored
+                    - leo
+                    - sagittarius
+                  horoscope: >-
+                    Today, the celestial alignment initiates a deep dive into
+                    your emotional landscapes, prompting you to analyze your
+                    hidden sentiments to strengthen existing links and navigate
+                    difficulties with loved ones more successfully. Open
+                    communication becomes essential, allowing you to gracefully
+                    balance individual desires. Financially, shrewd judgments
+                    keep a cautious route, reducing unnecessary risks and
+                    consolidating existing assets. Pay concentrated
+                    consideration not to let minor grievances cloud your
+                    judgement, strive to discover common understanding and
+                    resolve internal clashes diplomatically to facilitate
+                    individual advancement, reinforcing your bonds through
+                    vulnerability while navigating the ups and downs of
+                    interpersonal relationships cautiously keeping everything in
+                    balance.
+                  luckyNumber: 12
+                  luckyTime: 8:00 AM
+                  mood: excited
                   sign: aries
                   zodiac:
                     element: fire
@@ -67,7 +96,7 @@ paths:
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -75,4 +104,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
