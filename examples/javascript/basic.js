@@ -13,12 +13,7 @@ const API_URL = 'https://api.apiverve.com/v1/horoscope';
  */
 async function callHoroscopeAPI() {
   try {
-    // Query parameters
-    const params &#x3D; new URLSearchParams({
-            sign: &#x27;aries&#x27;
-        });
-
-    const response = await fetch(`${API_URL}?${params}`, {
+    const response = await fetch(API_URL, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
