@@ -1,1 +1,3 @@
-from .apiClient import HoroscopeAPIClient
+from .apiClient import HoroscopeAPIClient, HoroscopeAPIClientError
+
+__all__ = ['HoroscopeAPIClient', 'HoroscopeAPIClientError']
