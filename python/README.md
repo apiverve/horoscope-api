@@ -44,7 +44,11 @@ from apiverve_horoscope.apiClient import HoroscopeAPIClient
 # Initialize the client with your APIVerve API key
 api = HoroscopeAPIClient("[YOUR_API_KEY]")
 
-query = { "sign": "aries", "yesterday": , "tomorrow":  }
+query = {
+    "sign": "aries",
+    "yesterday": ,
+    "tomorrow": 
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "sign": "aries", "yesterday": , "tomorrow":  }
+query = {
+    "sign": "aries",
+    "yesterday": ,
+    "tomorrow": 
+}
 ```
 
 ###### Simple Request
@@ -135,7 +143,11 @@ from apiverve_horoscope.apiClient import HoroscopeAPIClient, HoroscopeAPIClientE
 
 api = HoroscopeAPIClient("[YOUR_API_KEY]")
 
-query = { "sign": "aries", "yesterday": , "tomorrow":  }
+query = {
+    "sign": "aries",
+    "yesterday": ,
+    "tomorrow": 
+}
 
 try:
     result = api.execute(query)
@@ -156,7 +168,11 @@ from apiverve_horoscope.apiClient import HoroscopeAPIClient, HoroscopeAPIClientE
 
 api = HoroscopeAPIClient("[YOUR_API_KEY]")
 
-query = { "sign": "aries", "yesterday": , "tomorrow":  }
+query = {
+    "sign": "aries",
+    "yesterday": ,
+    "tomorrow": 
+}
 
 try:
     result = api.execute(query)
@@ -190,7 +206,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_horoscope.apiClient import HoroscopeAPIClient, HoroscopeAPIClientError
 
-query = { "sign": "aries", "yesterday": , "tomorrow":  }
+query = {
+    "sign": "aries",
+    "yesterday": ,
+    "tomorrow": 
+}
 
 # Using context manager ensures proper cleanup
 with HoroscopeAPIClient("[YOUR_API_KEY]") as api:
@@ -216,7 +236,11 @@ from apiverve_horoscope.apiClient import HoroscopeAPIClient
 # Enable debug mode
 api = HoroscopeAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "sign": "aries", "yesterday": , "tomorrow":  }
+query = {
+    "sign": "aries",
+    "yesterday": ,
+    "tomorrow": 
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -231,8 +255,13 @@ from apiverve_horoscope.apiClient import HoroscopeAPIClient
 
 api = HoroscopeAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "sign": "aries",
+    "yesterday": ,
+    "tomorrow": 
+}
+
 try:
-    query = { "sign": "aries", "yesterday": , "tomorrow":  }
     result = api.execute(query)
     print(result)
 finally:
