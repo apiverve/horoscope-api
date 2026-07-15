@@ -60,9 +60,7 @@ Using the API is simple. All you have to do is make a request. The API will retu
 
 ```javascript
 var query = {
-  sign: "aries",
-  yesterday: false,
-  tomorrow: false
+  sign: "aries"
 };
 
 api.execute(query, function (error, data) {
@@ -82,9 +80,7 @@ You can also use promises to make requests. The API returns a promise that you c
 
 ```javascript
 var query = {
-  sign: "aries",
-  yesterday: false,
-  tomorrow: false
+  sign: "aries"
 };
 
 api.execute(query)
@@ -105,9 +101,7 @@ You can also use async/await to make requests. The API returns a promise that yo
 ```javascript
 async function makeRequest() {
     var query = {
-  sign: "aries",
-  yesterday: false,
-  tomorrow: false
+  sign: "aries"
 };
 
     try {
@@ -128,15 +122,15 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "color": "purple",
+    "color": "green",
     "compatibility": [
       "leo",
       "sagittarius"
     ],
-    "horoscope": "Today, you may feel a strong urge to expand your horizons and explore new opportunities. It's a great time to step out of your comfort zone and try something you've never done before. Trust your intuition and follow your instincts. Remember to stay grounded and maintain a sense of balance in all aspects of your life.",
-    "luckyNumber": 1,
-    "luckyTime": "1:00 PM",
-    "mood": "bored",
+    "horoscope": "Today, the celestial alignment initiates a deep dive into your emotional landscapes, prompting you to analyze your hidden sentiments to strengthen existing links and navigate difficulties with loved ones more successfully. Open communication becomes essential, allowing you to gracefully balance individual desires. Financially, shrewd judgments keep a cautious route, reducing unnecessary risks and consolidating existing assets. Pay concentrated consideration not to let minor grievances cloud your judgement, strive to discover common understanding and resolve internal clashes diplomatically to facilitate individual advancement, reinforcing your bonds through vulnerability while navigating the ups and downs of interpersonal relationships cautiously keeping everything in balance.",
+    "luckyNumber": 12,
+    "luckyTime": "8:00 AM",
+    "mood": "excited",
     "sign": "aries",
     "zodiac": {
       "element": "fire",
