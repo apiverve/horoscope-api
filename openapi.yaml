@@ -29,18 +29,6 @@ paths:
           required: true
           description: The zodiac sign for which you want to get the horoscope
           example: aries
-        - name: yesterday
-          in: query
-          schema:
-            type: boolean
-          required: false
-          description: Set to true to get yesterday's horoscope
-        - name: tomorrow
-          in: query
-          schema:
-            type: boolean
-          required: false
-          description: Set to true to get tomorrow's horoscope
       responses:
         '200':
           description: Successful Response
