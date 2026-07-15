@@ -4,30 +4,42 @@ declare module '@apiverve/horoscope' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface horoscopeResponse {
     status: string;
     error: string | null;
     data: HoroscopeData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface HoroscopeData {
-      color:         string;
-      compatibility: string[];
-      horoscope:     string;
-      luckyNumber:   number;
-      luckyTime:     string;
-      mood:          string;
-      sign:          string;
+      color:         null | string;
+      compatibility: (null | string)[];
+      horoscope:     null | string;
+      luckyNumber:   number | null;
+      luckyTime:     null | string;
+      mood:          null | string;
+      sign:          null | string;
       zodiac:        Zodiac;
   }
   
   interface Zodiac {
-      element: string;
-      name:    string;
-      stone:   string;
-      symbol:  string;
+      element: null | string;
+      name:    null | string;
+      stone:   null | string;
+      symbol:  null | string;
   }
 
   export default class horoscopeWrapper {
