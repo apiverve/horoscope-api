@@ -15,17 +15,5 @@ namespace APIVerve.API.Horoscope
         /// </summary>
         [JsonProperty("sign")]
         public string Sign { get; set; }
-
-        /// <summary>
-        /// Set to true to get yesterday's horoscope
-        /// </summary>
-        [JsonProperty("yesterday")]
-        public string Yesterday { get; set; }
-
-        /// <summary>
-        /// Set to true to get tomorrow's horoscope
-        /// </summary>
-        [JsonProperty("tomorrow")]
-        public string Tomorrow { get; set; }
     }
 }
