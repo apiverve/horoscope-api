@@ -191,11 +191,43 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Horoscope API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "color": "green",
+    "compatibility": [
+      "leo",
+      "sagittarius"
+    ],
+    "horoscope": "Today, the celestial alignment initiates a deep dive into your emotional landscapes, prompting you to analyze your hidden sentiments to strengthen existing links and navigate difficulties with loved ones more successfully. Open communication becomes essential, allowing you to gracefully balance individual desires. Financially, shrewd judgments keep a cautious route, reducing unnecessary risks and consolidating existing assets. Pay concentrated consideration not to let minor grievances cloud your judgement, strive to discover common understanding and resolve internal clashes diplomatically to facilitate individual advancement, reinforcing your bonds through vulnerability while navigating the ups and downs of interpersonal relationships cautiously keeping everything in balance.",
+    "luckyNumber": 12,
+    "luckyTime": "8:00 AM",
+    "mood": "excited",
+    "sign": "aries",
+    "zodiac": {
+      "element": "fire",
+      "name": "Aries",
+      "stone": "bloodstone",
+      "symbol": "♈"
+    }
+  }
 }
 ```
 
