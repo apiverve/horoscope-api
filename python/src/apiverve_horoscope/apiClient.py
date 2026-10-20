@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -24,9 +24,7 @@ class ValidationError(HoroscopeAPIClientError):
 class HoroscopeAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "sign": {"type": "string", "required": True},
-        "yesterday": {"type": "boolean", "required": False, "default": False},
-        "tomorrow": {"type": "boolean", "required": False, "default": False}
+        "sign": {"type": "string", "required": True}
     }
 
     # Format validation patterns

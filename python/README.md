@@ -1,13 +1,12 @@
 Horoscope API
 ============
 
-Horoscope is a simple tool for getting horoscope data. It returns the horoscope for the day.
+Horoscope fetches daily horoscope readings and sign details for any of the twelve zodiac signs. Pass a sign name to receive today's forecast text; paid tiers add birthdate lookups, mood, lucky numbers, sign compatibility, and sign facts like the ruling planet, opposite sign, brightest star and days until the sign's season.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Horoscope API](https://horoscope.apiverve.com?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-horoscope.svg)](https://pypi.org/project/apiverve-horoscope/)
+
+This is a Python wrapper for the [Horoscope API](https://apiverve.com/marketplace/horoscope?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-horoscope
 
 ## Configuration
 
-Before using the horoscope API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Horoscope API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -44,11 +43,7 @@ from apiverve_horoscope.apiClient import HoroscopeAPIClient
 # Initialize the client with your APIVerve API key
 api = HoroscopeAPIClient("[YOUR_API_KEY]")
 
-query = {
-    "sign": "aries",
-    "yesterday": ,
-    "tomorrow": 
-}
+query = { "sign": "aries" }
 
 try:
     # Make the API call
@@ -64,7 +59,7 @@ except Exception as e:
 
 ## Usage
 
-The Horoscope API documentation is found here: [https://docs.apiverve.com/ref/horoscope](https://docs.apiverve.com/ref/horoscope?utm_source=pypi&utm_medium=readme).
+The Horoscope API documentation is found here: [https://docs.apiverve.com/ref/horoscope](https://docs.apiverve.com/ref/horoscope?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -86,11 +81,7 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = {
-    "sign": "aries",
-    "yesterday": ,
-    "tomorrow": 
-}
+query = { "sign": "aries" }
 ```
 
 ###### Simple Request
@@ -110,21 +101,35 @@ print(result)
   "status": "ok",
   "error": null,
   "data": {
-    "color": "purple",
+    "color": "green",
     "compatibility": [
       "leo",
       "sagittarius"
     ],
-    "horoscope": "Today, you may feel a strong urge to expand your horizons and explore new opportunities. It's a great time to step out of your comfort zone and try something you've never done before. Trust your intuition and follow your instincts. Remember to stay grounded and maintain a sense of balance in all aspects of your life.",
-    "luckyNumber": 1,
-    "luckyTime": "1:00 PM",
-    "mood": "bored",
+    "horoscope": "Today, the celestial alignment initiates a deep dive into your emotional landscapes, prompting you to analyze your hidden sentiments to strengthen existing links and navigate difficulties with loved ones more successfully. Open communication becomes essential, allowing you to gracefully balance individual desires. Financially, shrewd judgments keep a cautious route, reducing unnecessary risks and consolidating existing assets. Pay concentrated consideration not to let minor grievances cloud your judgement, strive to discover common understanding and resolve internal clashes diplomatically to facilitate individual advancement, reinforcing your bonds through vulnerability while navigating the ups and downs of interpersonal relationships cautiously keeping everything in balance.",
+    "luckyNumber": 12,
+    "luckyTime": "8:00 AM",
+    "mood": "excited",
     "sign": "aries",
     "zodiac": {
       "element": "fire",
       "name": "Aries",
       "stone": "bloodstone",
-      "symbol": "♈"
+      "symbol": "♈",
+      "ruler": "Mars",
+      "modality": "cardinal",
+      "opposite": "libra",
+      "brightestStar": {
+        "name": "Hamal",
+        "description": "The head of the Ram",
+        "magnitude": 2
+      },
+      "season": {
+        "start": "03-21",
+        "end": "04-20",
+        "inSeason": false,
+        "daysUntil": 169
+      }
     }
   }
 }
@@ -143,11 +148,7 @@ from apiverve_horoscope.apiClient import HoroscopeAPIClient, HoroscopeAPIClientE
 
 api = HoroscopeAPIClient("[YOUR_API_KEY]")
 
-query = {
-    "sign": "aries",
-    "yesterday": ,
-    "tomorrow": 
-}
+query = { "sign": "aries" }
 
 try:
     result = api.execute(query)
@@ -168,11 +169,7 @@ from apiverve_horoscope.apiClient import HoroscopeAPIClient, HoroscopeAPIClientE
 
 api = HoroscopeAPIClient("[YOUR_API_KEY]")
 
-query = {
-    "sign": "aries",
-    "yesterday": ,
-    "tomorrow": 
-}
+query = { "sign": "aries" }
 
 try:
     result = api.execute(query)
@@ -206,11 +203,7 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_horoscope.apiClient import HoroscopeAPIClient, HoroscopeAPIClientError
 
-query = {
-    "sign": "aries",
-    "yesterday": ,
-    "tomorrow": 
-}
+query = { "sign": "aries" }
 
 # Using context manager ensures proper cleanup
 with HoroscopeAPIClient("[YOUR_API_KEY]") as api:
@@ -236,11 +229,7 @@ from apiverve_horoscope.apiClient import HoroscopeAPIClient
 # Enable debug mode
 api = HoroscopeAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = {
-    "sign": "aries",
-    "yesterday": ,
-    "tomorrow": 
-}
+query = { "sign": "aries" }
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -255,11 +244,7 @@ from apiverve_horoscope.apiClient import HoroscopeAPIClient
 
 api = HoroscopeAPIClient("[YOUR_API_KEY]")
 
-query = {
-    "sign": "aries",
-    "yesterday": ,
-    "tomorrow": 
-}
+query = { "sign": "aries" }
 
 try:
     result = api.execute(query)
@@ -273,7 +258,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -284,12 +269,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
