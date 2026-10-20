@@ -2,8 +2,11 @@ openapi: 3.0.4
 info:
   title: Horoscope
   description: >-
-    Horoscope is a simple tool for getting horoscope data. It returns the
-    horoscope for the day.
+    Horoscope fetches daily horoscope readings and sign details for any of the
+    twelve zodiac signs. Pass a sign name to receive today's forecast text; paid
+    tiers add birthdate lookups, mood, lucky numbers, sign compatibility, and
+    sign facts like the ruling planet, opposite sign, brightest star and days
+    until the sign's season.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +21,7 @@ servers:
 paths:
   /v1/horoscope:
     get:
-      summary: Get Horoscope
+      summary: Horoscope
       description: Get the horoscope of the day for a specific zodiac sign
       operationId: horoscope
       parameters:
@@ -79,6 +82,18 @@ paths:
                     name: Aries
                     stone: bloodstone
                     symbol: ♈
+                    ruler: Mars
+                    modality: cardinal
+                    opposite: libra
+                    brightestStar:
+                      name: Hamal
+                      description: The head of the Ram
+                      magnitude: 2
+                    season:
+                      start: 03-21
+                      end: 04-20
+                      inSeason: false
+                      daysUntil: 169
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
