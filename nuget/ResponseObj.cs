@@ -70,6 +70,48 @@ namespace APIVerve.API.Horoscope
 
         [JsonProperty("symbol")]
         public string Symbol { get; set; }
+
+        [JsonProperty("ruler")]
+        public string Ruler { get; set; }
+
+        [JsonProperty("modality")]
+        public string Modality { get; set; }
+
+        [JsonProperty("opposite")]
+        public string Opposite { get; set; }
+
+        [JsonProperty("brightestStar")]
+        public BrightestStar BrightestStar { get; set; }
+
+        [JsonProperty("season")]
+        public Season Season { get; set; }
+    }
+
+    public partial class BrightestStar
+    {
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
+        [JsonProperty("magnitude")]
+        public long? Magnitude { get; set; }
+    }
+
+    public partial class Season
+    {
+        [JsonProperty("start")]
+        public string Start { get; set; }
+
+        [JsonProperty("end")]
+        public string End { get; set; }
+
+        [JsonProperty("inSeason")]
+        public bool? InSeason { get; set; }
+
+        [JsonProperty("daysUntil")]
+        public long? DaysUntil { get; set; }
     }
 
     public partial class Premium

@@ -1,13 +1,12 @@
 Horoscope API
 ============
 
-Horoscope is a simple tool for getting horoscope data. It returns the horoscope for the day.
+Horoscope fetches daily horoscope readings and sign details for any of the twelve zodiac signs. Pass a sign name to receive today's forecast text; paid tiers add birthdate lookups, mood, lucky numbers, sign compatibility, and sign facts like the ruling planet, opposite sign, brightest star and days until the sign's season.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [Horoscope API](https://horoscope.apiverve.com?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.Horoscope.svg)](https://www.nuget.org/packages/APIVerve.API.Horoscope)
+
+This is a .NET wrapper for the [Horoscope API](https://apiverve.com/marketplace/horoscope?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -40,8 +39,8 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the horoscope API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+Before using the Horoscope API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -61,8 +60,8 @@ class Program
         var apiClient = new HoroscopeAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new HoroscopeQueryOptions {
-    Sign = "aries"
-};
+            Sign = "aries"
+        };
 
         // Make the API call
         try
@@ -92,7 +91,7 @@ class Program
 
 ## Usage
 
-The Horoscope API documentation is found here: [https://docs.apiverve.com/ref/horoscope](https://docs.apiverve.com/ref/horoscope?utm_source=nuget&utm_medium=readme).
+The Horoscope API documentation is found here: [https://docs.apiverve.com/ref/horoscope](https://docs.apiverve.com/ref/horoscope?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -125,8 +124,8 @@ public class Example
         var apiClient = new HoroscopeAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new HoroscopeQueryOptions {
-    Sign = "aries"
-};
+            Sign = "aries"
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -157,8 +156,8 @@ public class Example
         var apiClient = new HoroscopeAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new HoroscopeQueryOptions {
-    Sign = "aries"
-};
+            Sign = "aries"
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -194,8 +193,8 @@ public class Example
         var apiClient = new HoroscopeAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new HoroscopeQueryOptions {
-    Sign = "aries"
-};
+            Sign = "aries"
+        };
 
         try
         {
@@ -250,8 +249,8 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new HoroscopeQueryOptions {
-    Sign = "aries"
-};
+            Sign = "aries"
+        };
 
         try
         {
@@ -381,7 +380,21 @@ using (var apiClient = new HoroscopeAPIClient("[YOUR_API_KEY]"))
       "element": "fire",
       "name": "Aries",
       "stone": "bloodstone",
-      "symbol": "♈"
+      "symbol": "♈",
+      "ruler": "Mars",
+      "modality": "cardinal",
+      "opposite": "libra",
+      "brightestStar": {
+        "name": "Hamal",
+        "description": "The head of the Ram",
+        "magnitude": 2
+      },
+      "season": {
+        "start": "03-21",
+        "end": "04-20",
+        "inSeason": false,
+        "daysUntil": 169
+      }
     }
   }
 }
@@ -391,7 +404,7 @@ using (var apiClient = new HoroscopeAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -402,12 +415,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
