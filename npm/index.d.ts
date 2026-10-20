@@ -36,10 +36,28 @@ declare module '@apiverve/horoscope' {
   }
   
   interface Zodiac {
-      element: null | string;
-      name:    null | string;
-      stone:   null | string;
-      symbol:  null | string;
+      element:       null | string;
+      name:          null | string;
+      stone:         null | string;
+      symbol:        null | string;
+      ruler:         null | string;
+      modality:      null | string;
+      opposite:      null | string;
+      brightestStar: BrightestStar;
+      season:        Season;
+  }
+  
+  interface BrightestStar {
+      name:        null | string;
+      description: null | string;
+      magnitude:   number | null;
+  }
+  
+  interface Season {
+      start:     null | string;
+      end:       null | string;
+      inSeason:  boolean | null;
+      daysUntil: number | null;
   }
 
   export default class horoscopeWrapper {
