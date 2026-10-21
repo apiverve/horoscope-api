@@ -19,7 +19,7 @@ use APIVerve\Horoscope\Exceptions\ValidationException;
  * print_r($response);
  * ```
  *
- * @see https://horoscope.apiverve.com?utm_source=php&utm_medium=readme
+ * @see https://apiverve.com/marketplace/horoscope?utm_source=php&utm_medium=referral&utm_content=readme
  */
 class Client
 {

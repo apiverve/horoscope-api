@@ -1,6 +1,6 @@
 # Horoscope API - PHP Package
 
-Horoscope is a simple tool for getting horoscope data. It returns the horoscope for the day.
+Horoscope fetches daily horoscope readings and sign details for any of the twelve zodiac signs. Pass a sign name to receive today's forecast text; paid tiers add birthdate lookups, mood, lucky numbers, sign compatibility, and sign facts like the ruling planet, opposite sign, brightest star and days until the sign's season.
 
 ## Installation
 
@@ -83,7 +83,21 @@ $client = new Client(
       "element": "fire",
       "name": "Aries",
       "stone": "bloodstone",
-      "symbol": "♈"
+      "symbol": "♈",
+      "ruler": "Mars",
+      "modality": "cardinal",
+      "opposite": "libra",
+      "brightestStar": {
+        "name": "Hamal",
+        "description": "The head of the Ram",
+        "magnitude": 2
+      },
+      "season": {
+        "start": "03-21",
+        "end": "04-20",
+        "inSeason": false,
+        "daysUntil": 169
+      }
     }
   }
 }
@@ -96,11 +110,11 @@ $client = new Client(
 
 ## Documentation
 
-For more information, visit the [API Documentation](https://docs.apiverve.com/ref/horoscope?utm_source=packagist&utm_medium=readme).
+For more information, visit the [API Documentation](https://docs.apiverve.com/ref/horoscope?utm_source=packagist&utm_medium=referral&utm_content=readme).
 
 ## Support
 
-- Website: [https://horoscope.apiverve.com?utm_source=php&utm_medium=readme](https://horoscope.apiverve.com?utm_source=php&utm_medium=readme)
+- Website: [https://apiverve.com/marketplace/horoscope?utm_source=php&utm_medium=referral&utm_content=readme](https://apiverve.com/marketplace/horoscope?utm_source=php&utm_medium=referral&utm_content=readme)
 - Email: hello@apiverve.com
 
 ## License
