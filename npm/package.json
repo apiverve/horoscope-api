@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/horoscope",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Horoscope fetches daily horoscope readings and sign details for any of the twelve zodiac signs. Pass a sign name to receive today's forecast text; paid tiers add birthdate lookups, mood, lucky numbers, sign compatibility, and sign facts like the ruling planet, opposite sign, brightest star and days until the sign's season.",
   "main": "index.js",
   "types": "index.d.ts",
