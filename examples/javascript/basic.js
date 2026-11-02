@@ -15,7 +15,8 @@ async function callHoroscopeAPI() {
   try {
     // Query parameters
     const params &#x3D; new URLSearchParams({
-            sign: &#x27;aries&#x27;
+            sign: &#x27;aries&#x27;,
+            period: &#x27;daily&#x27;
         });
 
     const response = await fetch(`${API_URL}?${params}`, {

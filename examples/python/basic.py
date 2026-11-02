@@ -18,7 +18,7 @@ def call_horoscope_api():
     """
     try:
         # Query parameters
-        params &#x3D; {&#x27;sign&#x27;: &#x27;aries&#x27;}
+        params &#x3D; {&#x27;sign&#x27;: &#x27;aries&#x27;, &#x27;period&#x27;: &#x27;daily&#x27;}
 
         headers = {
             'x-api-key': API_KEY
