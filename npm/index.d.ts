@@ -27,7 +27,11 @@ declare module '@apiverve/horoscope' {
   interface HoroscopeData {
       color:         null | string;
       compatibility: (null | string)[];
+      date:          Date | null;
       horoscope:     null | string;
+      period:        null | string;
+      periodStart:   Date | null;
+      periodEnd:     Date | null;
       luckyNumber:   number | null;
       luckyTime:     null | string;
       mood:          null | string;

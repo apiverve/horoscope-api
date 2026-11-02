@@ -30,7 +30,7 @@ class horoscopeWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/horoscope';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"sign":{"type":"string","required":true}};
+        this.validationRules = {"sign":{"type":"string","required":true},"period":{"type":"string","required":false}};
     }
 
     /**
