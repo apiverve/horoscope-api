@@ -15,7 +15,7 @@ use APIVerve\Horoscope\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['sign' => 'aries']);
+ * $response = $client->execute(['sign' => 'aries', 'period' => 'daily']);
  * print_r($response);
  * ```
  *
@@ -34,7 +34,8 @@ class Client
      * Validation rules for parameters
      */
     private const VALIDATION_RULES = [
-        'sign' => ['type' => 'string', 'required' => true]
+        'sign' => ['type' => 'string', 'required' => true],
+        'period' => ['type' => 'string', 'required' => false]
     ];
 
     /**
