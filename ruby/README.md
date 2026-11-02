@@ -35,7 +35,10 @@ require 'apiverve_horoscope'
 client = APIVerve::Horoscope::Client.new(api_key: "YOUR_API_KEY")
 
 # Make a request
-response = client.execute({ sign: "aries" })
+response = client.execute({
+  sign: "aries",
+  period: "daily"
+})
 
 # Print the response
 puts response
@@ -46,7 +49,7 @@ puts response
 
 ```ruby
 begin
-  response = client.execute({ sign: "aries" })
+  response = client.execute({ sign: "aries", period: "daily" })
   puts response["data"]
 rescue APIVerve::Horoscope::ValidationError => e
   puts "Validation error: #{e.errors.join(', ')}"
@@ -73,14 +76,18 @@ client = APIVerve::Horoscope::Client.new(
   "status": "ok",
   "error": null,
   "data": {
-    "color": "green",
+    "color": "orange",
     "compatibility": [
       "leo",
       "sagittarius"
     ],
-    "horoscope": "Today, the celestial alignment initiates a deep dive into your emotional landscapes, prompting you to analyze your hidden sentiments to strengthen existing links and navigate difficulties with loved ones more successfully. Open communication becomes essential, allowing you to gracefully balance individual desires. Financially, shrewd judgments keep a cautious route, reducing unnecessary risks and consolidating existing assets. Pay concentrated consideration not to let minor grievances cloud your judgement, strive to discover common understanding and resolve internal clashes diplomatically to facilitate individual advancement, reinforcing your bonds through vulnerability while navigating the ups and downs of interpersonal relationships cautiously keeping everything in balance.",
-    "luckyNumber": 12,
-    "luckyTime": "8:00 AM",
+    "date": "2026-10-26",
+    "horoscope": "Today, your natural drive and ambition are amplified, Aries. You're likely to feel a surge of energy, making it an excellent day to tackle challenging projects and assert your leadership. Communication flows well, so don't hesitate to express your ideas clearly and confidently. Be mindful, however, of potential impatience; ensure you're not rushing others or overlooking important details in your eagerness to move forward. A surprise opportunity might arise from an unexpected source, so stay open and adaptable. Financially, a cautious approach is advised, but longterm investments could see positive developments if you've done your due diligence. Listen to your intuition, especially when making significant decisions regarding your career or personal goals. Your courage will be your greatest asset.",
+    "period": "daily",
+    "periodStart": "2026-10-26",
+    "periodEnd": "2026-10-26",
+    "luckyNumber": 74,
+    "luckyTime": "6:00 AM",
     "mood": "excited",
     "sign": "aries",
     "zodiac": {
@@ -100,7 +107,7 @@ client = APIVerve::Horoscope::Client.new(
         "start": "03-21",
         "end": "04-20",
         "inSeason": false,
-        "daysUntil": 169
+        "daysUntil": 145
       }
     }
   }

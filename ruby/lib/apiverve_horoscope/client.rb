@@ -10,7 +10,7 @@ module APIVerve
     #
     # @example Basic usage
     #   client = APIVerve::Horoscope::Client.new(api_key: "your_api_key")
-    #   response = client.execute({ sign: "aries" })
+    #   response = client.execute({ sign: "aries", period: "daily" })
     #   puts response
     #
     # @see https://apiverve.com/marketplace/horoscope?utm_source=ruby&utm_medium=referral&utm_content=readme
@@ -19,7 +19,7 @@ module APIVerve
       DEFAULT_TIMEOUT = 30
 
       # Validation rules for parameters
-      VALIDATION_RULES = { 'sign' => { type: 'string', required: true } }
+      VALIDATION_RULES = { 'sign' => { type: 'string', required: true }, 'period' => { type: 'string', required: false } }
 
       # Format validation patterns
       FORMAT_PATTERNS = {
