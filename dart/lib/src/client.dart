@@ -46,12 +46,11 @@ final _formatPatterns = {
 
 /// Horoscope API client.
 ///
-/// For more information, visit: https://horoscope.apiverve.com?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/horoscope?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [sign] (required) - The zodiac sign for which you want to get the horoscope
-/// * [yesterday] - Set to true to get yesterday's horoscope
-/// * [tomorrow] - Set to true to get tomorrow's horoscope
+/// * [period] - daily (default), weekly or monthly
 class HoroscopeClient {
   final String apiKey;
   final String baseUrl;
@@ -60,8 +59,7 @@ class HoroscopeClient {
   /// Validation rules for parameters.
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
     'sign': ValidationRule(type: 'string', required: true),
-    'yesterday': ValidationRule(type: 'boolean', required: false),
-    'tomorrow': ValidationRule(type: 'boolean', required: false),
+    'period': ValidationRule(type: 'string', required: false),
   };
 
   HoroscopeClient(this.apiKey, {
