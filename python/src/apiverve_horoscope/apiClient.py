@@ -24,7 +24,8 @@ class ValidationError(HoroscopeAPIClientError):
 class HoroscopeAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "sign": {"type": "string", "required": True}
+        "sign": {"type": "string", "required": True},
+        "period": {"type": "string", "required": False}
     }
 
     # Format validation patterns
