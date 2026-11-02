@@ -67,7 +67,8 @@ namespace APIVerve.API.Horoscope
         /// <summary>Validation rules for parameters</summary>
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
-            { "sign", new ValidationRule { Type = "string", Required = true } }
+            { "sign", new ValidationRule { Type = "string", Required = true } },
+            { "period", new ValidationRule { Type = "string", Required = false } }
         };
 
         /// <summary>Format validation patterns</summary>

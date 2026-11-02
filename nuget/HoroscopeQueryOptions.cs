@@ -15,5 +15,11 @@ namespace APIVerve.API.Horoscope
         /// </summary>
         [JsonProperty("sign")]
         public string Sign { get; set; }
+
+        /// <summary>
+        /// daily (default), weekly or monthly
+        /// </summary>
+        [JsonProperty("period")]
+        public string Period { get; set; }
     }
 }

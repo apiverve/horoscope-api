@@ -38,8 +38,20 @@ namespace APIVerve.API.Horoscope
         [JsonProperty("compatibility")]
         public string[] Compatibility { get; set; }
 
+        [JsonProperty("date")]
+        public DateTimeOffset? Date { get; set; }
+
         [JsonProperty("horoscope")]
         public string Horoscope { get; set; }
+
+        [JsonProperty("period")]
+        public string Period { get; set; }
+
+        [JsonProperty("periodStart")]
+        public DateTimeOffset? PeriodStart { get; set; }
+
+        [JsonProperty("periodEnd")]
+        public DateTimeOffset? PeriodEnd { get; set; }
 
         [JsonProperty("luckyNumber")]
         public long? LuckyNumber { get; set; }
