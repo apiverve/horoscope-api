@@ -4,6 +4,6 @@ require_relative "apiverve_horoscope/client"
 
 module APIVerve
   module Horoscope
-    VERSION = "1.2.4"
+    VERSION = "1.2.5"
   end
 end
